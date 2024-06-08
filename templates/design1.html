@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{url_for('static', filename='assets/Design1/img/aldsicon.png')}}">
+  <link rel="icon" type="image/png" href="{{url_for('static', filename='assets/Design1/img/aldsicon.png')}}">
+  <title>{{firstname}}'s Portfolio - Made By Code With Dhruv</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link href="{{url_for('static', filename='assets/Design1/css/nucleo-icons.css')}}" rel="stylesheet" />
+  <link href="{{url_for('static', filename='assets/Design1/css/blk-design-system.css')}}" rel="stylesheet" />
+  <link href="{{url_for('static', filename='assets/Design1/demo/demo.css')}}" rel="stylesheet" />
+</head>
+<body class="profile-page">
+  <div class="wrapper">
+    <div class="page-header">
+      <img src="{{ url_for('static', filename='assets/Design1/img/dots.png') }}" class="dots">
+      <img src="{{ url_for('static', filename='assets/Design1/img/path4.png') }}" class="path">
+      <div class="container align-items-center">
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <h1 class="profile-title text-left"> {{lastname}}</h1>
+            <h5 class="text-on-back">{{firstname}}</h5>
+            <p class="profile-description">{{about}}</p>
+            <div class="btn-wrapper profile pt-3">
+              <a target="_blank" href="https://www.youtube.com/channel/UCmOBuijDvNgUMlqpzrwEBcw" class="btn btn-icon btn-dribbble btn-round" data-toggle="tooltip" data-original-title="Subscribe">
+                <i class="fab fa-linkedin"></i>
+
+              </a>
+              <a target="_blank" href="https://github.com/codewithdhruv22" class="btn btn-icon btn-facebook btn-round" data-toggle="tooltip" data-original-title="Follow me">
+                <i class="fab fa-github"></i>
+              </a>
+              <a target="_blank" href="https://www.instagram.com/dhruvarne/" class="btn btn-icon btn-instagram btn-round" data-toggle="tooltip" data-original-title="Follow me">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+            <div class="card card-coin card-plain">
+              <div class="card-header">
+                {% if img %}
+                  <img src="{{ url_for('static', filename='images_pf/' + img) }}" class="img-center img-fluid rounded-circle">
+                {% else %}
+                  <img src="{{ url_for('static', filename='assets/Design1/img/default_profile.png') }}" class="img-center img-fluid rounded-circle">
+                {% endif %}
+                <h4 class="title">Profile</h4>
+              </div>
+              <div class="card-body">
+                <ul class="nav nav-tabs nav-tabs-primary justify-content-center">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#linka">Study</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#linkb">Skills</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#linkc">Contact</a>
+                  </li>
+                </ul>
+                <div class="tab-content tab-subcategories">
+                  <div class="tab-pane active" id="linka">
+                    <div class="table-responsive">
+                      <table class="table tablesorter" id="plain-table">
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header">School</th>
+                            <th>{{school}}</th>
+                          </tr>
+                        </thead>
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header">College</th>
+                            <th>{{college}}</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="linkb">
+                    <div class="table-responsive">
+                      <table class="table tablesorter" id="plain-table">
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header"></th>
+                            <th>{{skill1}}</th>
+                          </tr>
+                        </thead>
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header"></th>
+                            <th>{{skill2}}</th>
+                          </tr>
+                        </thead>
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header"></th>
+                            <th>{{skill3}}</th>
+                          </tr>
+                        </thead>
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header"></th>
+                            <th>{{skill4}}</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="linkc">
+                    <div class="table-responsive">
+                      <table class="table tablesorter" id="plain-table">
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header"><i class="fa fa-phone"></i></th>
+                            <th>{{phone}}</th>
+                          </tr>
+                        </thead>
+                        <thead class="text-primary">
+                          <tr>
+                            <th class="header"><i class="fa fa-envelope"></i></th>
+                            <th>{{email}}</th>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Core JS Files -->
+  <script src="{{ url_for('static', filename='assets/Design1/js/core/jquery.min.js') }}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/core/popper.min.js') }}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/core/bootstrap.min.js') }}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/plugins/bootstrap-switch.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/plugins/nouislider.min.js') }}" type="text/javascript"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/plugins/chartjs.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/plugins/moment.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/demo/demo.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/Design1/js/blk-design-system.min.js?v=1.0.0') }}" type="text/javascript"></script>
+</body>
+</html>
